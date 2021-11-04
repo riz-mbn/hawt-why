@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php wp_title();?></title>
-    <link rel=icon href='<?php echo MBN_ASSETS_URI ?>/img/icon/favicon.jpg' />
+    <link rel=icon href='<?php bloginfo('template_url'); ?>/lander/img/favicon.jpg' />
+    <!-- <title><?php bloginfo('title') ?></title> -->
     
     <?php wp_head(); ?>
     
     <!--  CSS -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/plugins.css" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css?v=1.0.1" />
 
     <!-- jQuery, plugins JS -->
     <script src="<?php bloginfo('template_url'); ?>/lander/js/jquery.min.js"></script>
@@ -34,39 +35,62 @@
                 </a>
             </div>     
         </header>
-
-        <section id="hero" class="hero hero-s5">            
-            <!-- <figure class="bg">
-                <img src="<?php bloginfo('template_url'); ?>/lander/img/hero-banner.gif" alt="" width="1920" height="829">
-            </figure> -->
-            <div class="grid-container">
-                <div class="grid-x grid-padding-x">
-                    <div class="cell large-12 align-self-middle large-order-1">   
-                        
-                    </div>  
-                </div> 
-            </div>    
-        </section> 
         <main id="content">
-            <section class="section-1">
+
+            <section id="hero" class="hero hero-s5">            
+                <!-- <figure class="bg">
+                    <img src="<?php bloginfo('template_url'); ?>/lander/img/hero-banner.gif" alt="" width="1920" height="829">
+                </figure> -->
+                <div class="grid-container text-center">
+                    <figure class="movie_title"><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="547" height="243" /></figure>
+                    <div class="btn-play" data-video="<?php bloginfo('template_url'); ?>/lander/video/vid-trailer.mp4" ><span>Watch Player</span></div>
+                </div>    
+            </section> 
+            <section class="divider text-center">
                 <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        <div class="cell large-6 col-image">
-                        </div>
-                        <div class="cell large-6 col-copy">
-                            
-                        </div>
-                    </div>
+                    <h2 class="type-sidelines custom-2"><span>STREAM NOW OUT NOW</span></h2>
+                    <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-prime-video.png" width="160" height="72"  /></figure>
                 </div>
             </section>
             <section class="section-2">
                 <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        <div class="cell large-6 large-order-2 col-image">
+                    <figure class="text-center"><img src="<?php bloginfo('template_url'); ?>/lander/img/img-story.jpg" width="690" height="290"  /></figure>
+                    <div class="story_section">
+                        <div class="text-wrap">
+                            <h3>Story</h3>
+                            <p>Writer Blake Sinclair needs a break to cure her writer's block.</p>
+                            <p>When her boyfriend offers his family cabin, it sounds like an idyllic weekend getaway. However, alone and deep in the woods, she soon finds herself in a desperate fight for her life to escape a bloodthirsty maniac who has been leaving multiple victims in his wake as he returns to the quaint mountain town of Northdale.</p>
+                            <p>Can she survive?</p>
                         </div>
-                        <div class="cell large-6 col-copy">
-                            
+                        <hr/>
+                        <div class="text-wrap">
+                            <h3>About</h3>
+                            <div class="info">
+                                <div class="info_inner directed_by">
+                                    <p>Directed By:</p><p class="name">Corbin Timbrook</p>    
+                                </div>
+                                <div class="info_inner starring">
+                                    <p>Starring:</p>
+                                    <p class="name">Lance Henriksen (<em>Aliens</em>),
+                                     Natasha Henstridge (<em>Species</em>), 
+                                     Bell (<em>The Walking Dead</em>) 
+                                     Chris Browning (<em>Terminator Salvation</em>)</p>    
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery_slick">
+                            <?php for( $i=1; $i <= 35; $i++ ) :
+                                $img_url = get_template_directory_uri() .'/lander/img/gallery/'. $i .'.jpg';
+                                ?>
+                                <a href="<?php echo $img_url; ?>" class="gallery_item" rel="gallery1" data-bg="<?php echo $img_url; ?>" ><?php echo $i ?>
+                                </a>
+                            <?php endfor; ?>
+                        </div>
+                    </div>
+                    <div class="logo_bottom text-center">
+                        <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="547" height="243" /></figure>
                     </div>
                 </div>
             </section>

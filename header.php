@@ -13,21 +13,12 @@
 <body <?php body_class() ?>>
 
 <div id="wrapper"> 
-    <header id="header" >
-
-            <a class="logo" href="<?php echo get_home_url(); ?>">
-                <img src="<?php echo MBN_ASSETS_URI ?>/img/logo.png" alt="">
+    
+    <header id="header">
+        <div class="grid-container text-center">
+            <a href="<?php echo get_home_url(); ?>"> 
+                <figure id="logo"><img src="<?php echo MBN_ASSETS_URI ?>/img/logo.png" alt="" width="194" height="48"></figure>        
             </a>
-                
-            <div class="menu">    
-                <?php
-                    wp_nav_menu( array( 
-                        'theme_location' => 'main-menu',
-                        'menu'       => '',
-                        'container'  => '',
-                        'items_wrap' => '<ul class="menu align-center dropdown" data-dropdown-menu>%3$s</ul>' 
-                    ));
-                ?>     
-            </div>        
+        </div>     
     </header>
     <main id="content" class="content">
