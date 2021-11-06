@@ -15,7 +15,7 @@
 /* -= Global Styles =- 
 ========================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@,wght@0,300,0,400;0,700;1,300;1,400;1,700&display=swap');
 @font-face {
     font-family: 'Copperplate Gothic Bold';
     src: url('../fonts/copperplate-gothic-bold.ttf');
@@ -48,7 +48,7 @@
   }
   body {
       font-size:16px;
-      font-family:"Lato";
+      font-family:'Lato', sans-serif;
       font-weight: 400;
       line-height:1.5;
       color:#fff;
@@ -121,7 +121,7 @@
   p {margin:0 0 20px;}
   
   hr {
-      border-color:#7f8ad8;
+      border-color:#4B5563;
       border-width: 1px;
       overflow: hidden;
       margin: 40px 0;
@@ -453,6 +453,7 @@
 
   .btn-play span {      
     font-size: 10px;
+    font-family: "Lato", sans-serif;
     text-transform: uppercase;
     position: absolute;
     bottom: -15px;
@@ -484,12 +485,13 @@
       width: 72px;
       height: 72px;
       line-height: 75px;
+      padding-left: 6px;
   }
   .btn-play:hover:before {
       opacity: 0.9;
       width: 64px;
       height: 64px;
-      line-height: 64px;
+      line-height: 66px;
   }
 
   .btn-play:after {
@@ -618,19 +620,22 @@
   }
   
   #hero {
-	background: url(../img/hero-banner.gif);
+    background: url(../img/hero-banner-bg.jpg);
     position: relative;
-    padding: 120px 0 190px;
+    padding: 8vw 0 32vw;
     object-position: center;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 	background-color: #000;
-    max-width: 1920px;
+    max-width: 100vw;
     max-height: 829px;
     width: 100%;
     height: 100%;
     z-index: 1;
+    margin: 0 auto!important;
+    overflow: hidden;
+    
   }
 
   .hero:before {
@@ -643,8 +648,21 @@
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
   }
+
+  .hero .vid-bg {        
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100vw;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .hero .vid-content {
+  }
+
   #hero h1 {
       font-size: 65px;
       color: #fff;
@@ -779,14 +797,15 @@
       color: #fff;
       font-size: 14px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: 0.1em;
   } 
   #content .section-1 p,
   #content .section-2 p{
-    font-size: 16px;
     font-family: 'Lato', sans-serif;
-	  color: #fff
+    font-size: 16px;
+    font-weight: 300!important;
+	  color: #D1D5DB;
   }
   
   #content .section-2 {
@@ -796,11 +815,11 @@
       background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.578431) 12.5%, rgba(0, 0, 0, 0) 53.12%, rgba(0, 0, 0, 0.466667) 86.46%, #000000 100%), url(../img/img-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
-      max-width: 1920px;
       min-height: 1413px;
       width: 100%;
       height: 100%;
       background-position: center center;
+      margin: 0 auto!important;
   }
 
   #content .section-2 .story_section {
@@ -817,7 +836,7 @@
       position: absolute;
       -webkit-backdrop-filter: blur(34px);
       backdrop-filter: blur(34px);
-      background-color: rgba(17, 24, 39, 0.3);
+      background-color: rgba(17, 24, 39, 0.7);
       border-radius: 3px;
       width: 100%;
       height: 100%;
@@ -919,10 +938,9 @@
 	color: #000;
   }
 
-  .revel.large {	  
+  .reveal.large {	  
     width: 80%;
     max-width: 75rem;
-    top: 10% !important;
   }
 
   .info .info_inner{
@@ -1031,6 +1049,15 @@
     display: flex;
     align-items: center;
   }
+
+  .footbot .copyright,
+  .footbot .copyright a {
+      color: #9CA3AF!important;
+  }
+
+  .footbot .copyright a strong {
+    color: #fff;
+}
 
   .footbot .follow_us {
     display: flex;
@@ -1187,6 +1214,14 @@
   
   /* -= #Media Queries =- 
   ======================================================*/
+
+  @media (min-width: 2560px) and ( max-width: 3840px ) {
+    #hero { padding: 8vw 0 32vw; }
+}
+
+  @media (max-width: 1920px) {
+        #hero { padding: 3vw 0 8vw; }
+  }
   
   
   @media (max-width: 1480px) {
@@ -1197,7 +1232,7 @@
   
   /* Landscape tablet */
   @media (max-width: 1440px) {
-      #hero {padding: 120px 0 60px; }
+      #hero {padding: 80px 0 60px; }
 	  #logo { margin: 0 auto;}
       #hero {background-position: 50% top;}
       #hero hgroup {}
@@ -1207,10 +1242,13 @@
       .tabs-menu .tabs .tabs-title {margin: 0 20px;}
       .tabs-menu .tabs .tabs-title a {font-size: 14px;}
   
-      .intro-1 p {max-width: none;}
-  
-  
+      .intro-1 p {max-width: none;}   
   }
+
+  @media (max-width: 1440px) and (min-width: 1025px) {
+      #hero .movie_title img { width:400px }
+  }
+
   /* Portrait tablet */
   @media (max-width: 1024px) {  
 	#hero .large-order-2 figure.col-image {left: 0;	text-align: center;}  

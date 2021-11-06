@@ -55,14 +55,16 @@ jQuery(function($) {
     });
 
     $('.btn-play').each( function(){
-        $(this).click(function(){
+        $(this).click(function(e){
 
             var vid = $(this).data('video'); 
             var yt_url = 'https://www.youtube.com/embed/';  
             
             $("iframe#ytplayer").attr('src', yt_url + vid + '?autoplay=1&loop=1&modestbranding=1&rel=0' );
-            $('#popup-video').foundation('open');        
-        });
+            $('#popup-video').foundation('open');     
+            $('html, body').animate({
+              scrollTop: $("body").offset().top}, 500);
+        }).click(function (e) { e.preventDefault();});
     });
 
 
@@ -133,6 +135,8 @@ jQuery(function($) {
       dots: true,
       focusOnSelect: true,
       infinite : false,
+      autoplay: true,
+      autoplaySpeed: 2000,
     });
             
     // fancybox
@@ -140,6 +144,9 @@ jQuery(function($) {
       selector : '.gallery_slick .slick-slide:not(.slick-cloned)',
       backFocus : false,
     });
+
+
+
 
 });
 

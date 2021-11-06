@@ -18,7 +18,12 @@
     
     <!--  CSS -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/plugins.css" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css?v=1.0.1" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css?v=1.1.3" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <!-- jQuery, plugins JS -->
     <script src="<?php bloginfo('template_url'); ?>/lander/js/jquery.min.js"></script>
@@ -38,10 +43,10 @@
         <main id="content">
 
             <section id="hero" class="hero hero-s5">            
-                <!-- <figure class="bg">
-                    <img src="<?php bloginfo('template_url'); ?>/lander/img/hero-banner.gif" alt="" width="1920" height="829">
-                </figure> -->
-                <div class="grid-container text-center">
+                <video autoplay muted loop class="vid-bg">
+                    <source src="<?php bloginfo('template_url'); ?>/lander/video/vid-trailer.mp4" type="video/mp4" autoplay>
+                </video>
+                <div class="grid-container text-center vid-content">
                     <?php
                         $video_1 = "https://youtu.be/nGxj0gtd6mU";
                         preg_match('#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#', $video_1, $match_1);
@@ -54,8 +59,11 @@
             <section class="divider text-center">
                 <div class="grid-container">
                     <h2 class="type-sidelines custom-2"><span>STREAM NOW OUT NOW</span></h2>
-                    <a href="https://amzn.to/31kidl8" target="_blank">
+                    <a href="https://amzn.to/31kidl8" target="_blank" class="show-for-medium">
                         <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-prime-video.png" width="160" height="72"  /></figure>
+                    </a>
+                    <a href="https://amzn.to/31kidl8" target="_blank" class="hide-for-medium">
+                        <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-prime-video-mob.png" width="331" height="72"  /></figure>
                     </a>
                 </div>
             </section>
@@ -78,10 +86,12 @@
                                 </div>
                                 <div class="info_inner starring">
                                     <p>Starring:</p>
-                                    <p class="name">Lance Henriksen (<em>Aliens</em>),
+                                    <p class="name">
+                                     Lance Henriksen (<em>Aliens</em>), 
                                      Natasha Henstridge (<em>Species</em>), 
-                                     Bell (<em>The Walking Dead</em>) 
-                                     Chris Browning (<em>Terminator Salvation</em>)</p>    
+                                     Emma Bell (<em>The Walking Dead</em>), 
+                                     Chris Browning (<em>Terminator Salvation</em>)
+                                     </p>    
                                 </div>
                             </div>
                         </div>
@@ -97,7 +107,7 @@
                         </div>
                     </div>
                     <div class="logo_bottom text-center">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="547" height="243" /></figure>
+                        <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="318" height="141" /></figure>
                     </div>
                 </div>
             </section>
@@ -111,29 +121,31 @@
                     </div>
                     <div class="col-2">
                         <div class="copyright"><a href="https://www.mybizniche.com/phoenix-web-design/" target="_blank">Website</a> created by: <strong>hawt agency</strong></span></div>                        
-                        <div class="bar">|</div>
-                        <div class="follow_us">
-                            <span class="social_icon fb_icon">
-                                <a href="#" target="_blank">
-                                    <figure>
-                                        <img src="<?php bloginfo('template_url'); ?>/lander/img/icn-fb.svg" alt="" width="9" height="18" />
-                                    </figure>
-                                </a>
-                            </span>
-                            <span class="social_icon ig_icon">
-                                <a href="#" target="_blank">
-                                    <figure>
-                                        <img src="<?php bloginfo('template_url'); ?>/lander/img/icn-ig.svg" alt="" width="14" height="18" />
-                                    </figure>
-                                </a>
-                            </span>
-                        </div>
+                        <!-- 
+                            <div class="bar">|</div>
+                            <div class="follow_us">
+                                <span class="social_icon fb_icon">
+                                    <a href="#" target="_blank">
+                                        <figure>
+                                            <img src="<?php bloginfo('template_url'); ?>/lander/img/icn-fb.svg" alt="" width="9" height="18" />
+                                        </figure>
+                                    </a>
+                                </span>
+                                <span class="social_icon ig_icon">
+                                    <a href="#" target="_blank">
+                                        <figure>
+                                            <img src="<?php bloginfo('template_url'); ?>/lander/img/icn-ig.svg" alt="" width="14" height="18" />
+                                        </figure>
+                                    </a>
+                                </span>
+                            </div> 
+                        -->
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    <div class="reveal large" id="popup-video" data-reveal>
+    <div class="reveal large" style="top: 20%;" id="popup-video" data-reveal data-v-offset="40">
         <div class="responsive-embed">
             <iframe id="ytplayer" width="560" height="315" src="" frameborder="0" allowfullscreen allow=" autoplay;"></iframe>
         </div>
@@ -144,7 +156,7 @@
     <script>$(document).foundation();</script>
 
     <?php wp_footer(); ?>
-    <script src="<?php bloginfo('template_url'); ?>/lander/js/custom.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/lander/js/custom.js?v=1.0.1"></script>
 </body>
 
 </html>
