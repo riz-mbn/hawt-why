@@ -42,14 +42,21 @@
                     <img src="<?php bloginfo('template_url'); ?>/lander/img/hero-banner.gif" alt="" width="1920" height="829">
                 </figure> -->
                 <div class="grid-container text-center">
+                    <?php
+                        $video_1 = "https://youtu.be/nGxj0gtd6mU";
+                        preg_match('#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#', $video_1, $match_1);
+                        $video_1 = $match_1[0];      
+                    ?>
                     <figure class="movie_title"><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="547" height="243" /></figure>
-                    <div class="btn-play" data-video="<?php bloginfo('template_url'); ?>/lander/video/vid-trailer.mp4" ><span>Watch Player</span></div>
+                    <div class="btn-play" data-video="<?php echo $video_1 ?>" ><span>Watch Player</span></div>
                 </div>    
             </section> 
             <section class="divider text-center">
                 <div class="grid-container">
                     <h2 class="type-sidelines custom-2"><span>STREAM NOW OUT NOW</span></h2>
-                    <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-prime-video.png" width="160" height="72"  /></figure>
+                    <a href="https://amzn.to/31kidl8" target="_blank">
+                        <figure><img src="<?php bloginfo('template_url'); ?>/lander/img/img-prime-video.png" width="160" height="72"  /></figure>
+                    </a>
                 </div>
             </section>
             <section class="section-2">

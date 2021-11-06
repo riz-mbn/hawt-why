@@ -22,8 +22,7 @@
                 $('#header').toggleClass('show-classes');
                 $('#header').removeClass('show-account');
                 $('#header').removeClass('show-menu');
-            });
-
+            });   
             $(window).scroll(function() {
                 var getTop = $('.courses_results').offset().top;
                 if ($(this).scrollTop() > getTop){  
