@@ -18,7 +18,7 @@
     
     <!--  CSS -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/plugins.css" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css?v=1.1.3" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lander/css/main.css?v=1.1.8" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@
                         $video_1 = $match_1[0];      
                     ?>
                     <figure class="movie_title"><img src="<?php bloginfo('template_url'); ?>/lander/img/img-title-hero.png" width="547" height="243" /></figure>
-                    <div class="btn-play" data-video="<?php echo $video_1 ?>" ><span>Watch Player</span></div>
+                    <div class="btn-play" data-video="<?php echo $video_1 ?>" ><span>Watch Trailer</span></div>
                 </div>    
             </section> 
             <section class="divider text-center">
@@ -117,7 +117,7 @@
             <div class="grid-container">
                 <div class="footbot">
                     <div class="col-1">
-                        <figure id="logo"><img src="<?php bloginfo('template_url'); ?>/lander/img/logo.png" alt="" width="134" height="33"></figure>
+                        <a href="<?php echo home_url() ?>"><img src="<?php bloginfo('template_url'); ?>/lander/img/logo.png" alt="" width="134" height="33"></figure></a>
                     </div>
                     <div class="col-2">
                         <div class="copyright"><a href="https://www.mybizniche.com/phoenix-web-design/" target="_blank">Website</a> created by: <strong>hawt agency</strong></span></div>                        

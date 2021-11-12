@@ -5,7 +5,7 @@
         <div class="grid-container">
             <div class="footbot">
                 <div class="col-1">
-                    <figure id="logo"><img src="<?php echo MBN_ASSETS_URI ?>/img/logo.png" alt="" width="134" height="33"></figure>
+                    <a href="<?php echo home_url() ?>"><figure id="logo"><img src="<?php echo MBN_ASSETS_URI ?>/img/logo.png" alt="" width="134" height="33"></figure></a>
                 </div>
                 <div class="col-2">
                     <div class="copyright"><a href="https://www.mybizniche.com/phoenix-web-design/" target="_blank">Website</a> created by: <strong>hawt agency</strong></span></div>                        
